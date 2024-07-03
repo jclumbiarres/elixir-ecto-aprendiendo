@@ -1,18 +1,23 @@
 defmodule Todolistex do
-  @moduledoc """
-  Documentation for `Todolistex`.
-  """
+  alias DataCollector.{TodoList}
 
-  @doc """
-  Hello world.
+  @spec insertar(String.t(), String.t(), boolean()) :: any()
+  def insertar(nombre, desc, completado) do
+    todo = %{
+      nombre: nombre,
+      descripcion: desc,
+      completado: completado
+    }
 
-  ## Examples
+    try do
+      %TodoList{}
+      |> TodoList.anadir(todo)
+    rescue
+      _ -> {:error, "Esto... ha petao"}
+    end
+  end
 
-      iex> Todolistex.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def listar do
+    TodoList.listar(%TodoList{}, %{})
   end
 end

@@ -11,8 +11,8 @@ defmodule Todolistex.Application do
     children = [
       # Starts a worker by calling: Todolistex.Worker.start_link(arg)
       # {Todolistex.Worker, arg}
-      {DataCollector.Repo, []},
-      DataCollector.Worker
+      {DataCollector.Repo, []}
+      # DataCollector.Worker
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
