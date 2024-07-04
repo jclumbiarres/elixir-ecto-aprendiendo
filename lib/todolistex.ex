@@ -35,6 +35,9 @@ defmodule Todolistex do
   end
 
   def borrarId(id) do
-    TodoList.borrarId(id)
+    case TodoList.borrarId(id) do
+      {:error, _} -> {:error, "No existe"}
+      _ -> {:ok, "Borrado"}
+    end
   end
 end
