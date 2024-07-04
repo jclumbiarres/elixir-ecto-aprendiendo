@@ -38,4 +38,9 @@ defmodule DataCollector.TodoList do
     TodoList
     |> DataCollector.Repo.all()
   end
+
+  def listaId(id) do
+    TodoList
+    |> DataCollector.Repo.get(id)
+  end
 end

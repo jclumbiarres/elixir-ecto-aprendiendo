@@ -20,4 +20,8 @@ defmodule Todolistex do
   def listar do
     TodoList.listar()
   end
+
+  def listaId(id) do
+    TodoList.listaId(id)
+  end
 end
