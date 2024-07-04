@@ -1,4 +1,5 @@
 defmodule DataCollector.TodoList do
+  alias DataCollector.TodoList
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -33,12 +34,8 @@ defmodule DataCollector.TodoList do
       |> DataCollector.Repo.insert()
   end
 
-  @spec listar(
-          any(),
-          :invalid | %{optional(:__struct__) => none(), optional(atom() | binary()) => any()}
-        ) :: Ecto.Changeset.t()
-  def listar(_todolist, params) do
-    %DataCollector.TodoList{}
-    |> DataCollector.TodoList.changeset(params)
+  def listar do
+    TodoList
+    |> DataCollector.Repo.all()
   end
 end

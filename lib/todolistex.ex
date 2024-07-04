@@ -18,6 +18,6 @@ defmodule Todolistex do
   end
 
   def listar do
-    TodoList.listar(%TodoList{}, %{})
+    TodoList.listar()
   end
 end
