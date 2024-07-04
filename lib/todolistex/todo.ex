@@ -48,4 +48,13 @@ defmodule DataCollector.TodoList do
     TodoList
     |> DataCollector.Repo.delete_all()
   end
+
+  def borrarId(id) do
+    todo = DataCollector.Repo.get!(TodoList, id)
+
+    case DataCollector.Repo.delete(todo) do
+      {:ok, _} -> {:ok, "Borrado"}
+      {:error, _} -> {:error, "Error al borrar"}
+    end
+  end
 end

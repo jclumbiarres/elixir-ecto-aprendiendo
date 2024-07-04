@@ -33,4 +33,8 @@ defmodule Todolistex do
   def borraTodo do
     TodoList.borrarTodo()
   end
+
+  def borrarId(id) do
+    TodoList.borrarId(id)
+  end
 end
