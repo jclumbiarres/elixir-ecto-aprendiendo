@@ -43,4 +43,9 @@ defmodule DataCollector.TodoList do
     TodoList
     |> DataCollector.Repo.get(id)
   end
+
+  def borrarTodo do
+    TodoList
+    |> DataCollector.Repo.delete_all()
+  end
 end

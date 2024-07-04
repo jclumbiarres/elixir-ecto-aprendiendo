@@ -24,4 +24,13 @@ defmodule Todolistex do
   def listaId(id) do
     TodoList.listaId(id)
   end
+
+  def completar(id) do
+    todo = TodoList.listaId(id)
+    TodoList.completar(todo)
+  end
+
+  def borraTodo do
+    TodoList.borrarTodo()
+  end
 end
